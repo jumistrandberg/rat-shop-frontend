@@ -2,7 +2,7 @@ import type { Config } from 'jest';
 
 const config: Config = {
     preset: "ts-jest",
-    testEnvironment: "jsdom",
+    testEnvironment: "jest-environment-jsdom",
     transform: {
         "^.+\\.(js|jsx|ts|tsx)$": "ts-jest",
     }
