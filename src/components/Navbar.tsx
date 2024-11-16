@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menu, setMenu] = useState("home");
@@ -13,7 +14,7 @@ const Navbar = () => {
             onClick={() => setMenu("home")}
             className={`cursor-pointer ${menu === "home" ? "text-blue-400" : ""}`}
           >
-            Home
+            <Link to="/">Home</Link>
           </li>
           <li
             onClick={() => setMenu("rats")}
@@ -25,13 +26,15 @@ const Navbar = () => {
             onClick={() => setMenu("maybe")}
             className={`cursor-pointer ${menu === "maybe" ? "text-blue-400" : ""}`}
           >
-            Maybe Rats
+            <Link to="/maybe">Maybe Rats</Link>
           </li>
         </ul>
 
         <div className="nav-login-cart flex space-x-6">
-          <p>Cart placeholder</p>
-          <button className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">Login</button>
+          <Link to="/cart">Cart placeholder</Link>
+          <button className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">
+            <Link to="/login">Login</Link>
+          </button>
         </div>
       </div>
     </nav>
